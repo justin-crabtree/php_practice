@@ -4,8 +4,27 @@ if(isset($_POST['submit'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
 
-  echo "Hello " . $username;
-  echo "Your password is " . $password;
+  $min = 5;
+  $max = 10;
+  $names = ["Justin", "Alexis", "Mr. Fish"];
+
+  // echo "Hello " . $username;
+  // echo "Your password is " . $password;
+
+  if (strlen($username) < $min) {
+    echo "Username has to be at least 5 characters";
+  }
+  if (strlen($username) > $max) {
+    echo "Username can't be more than 10 characters";
+  }
+
+  if (!in_array($username, $names)) {
+    echo "You're not a user";
+  } else {
+    echo "You may enter";
+  }
+
+
 
 }
 
