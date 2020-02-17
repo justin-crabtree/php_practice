@@ -1,11 +1,29 @@
 <?php 
 
 if(isset($_POST['submit'])) {
+
   $username = $_POST['username'];
   $password = $_POST['password'];
+  $connection = mysqli_connect('localhost', 'root', '', 'login_app');
+    if ($connection) {
+      echo "it works";
+    } else {
+      die("Database connection failed");
+    }
 
-  echo $username;
-  echo $password;
+
+
+
+
+
+  // if($username && $password) {
+  //   echo $username;
+  //   echo $password;
+  // } else {
+  //   echo "denied";
+  // }
+
+  
 
 
 }
