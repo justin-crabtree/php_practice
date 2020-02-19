@@ -1,6 +1,25 @@
 <?php 
 include 'db.php';
 include 'functions.php';
+
+if(isset($_POST['submit'])) {
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  $id = $_POST['id'];
+
+  $query = "UPDATE users SET ";
+  $query .= "username = '$username', ";
+  $query .= "password = '$password' ";
+  $query .= "WHERE id = $id";
+
+  $result = mysqli_query($connection, $query);
+  if(!$result) {
+    die("Query Failed" . mysqli_error($connection));
+  }
+}
+
+
+
 ?>
 
 
@@ -16,7 +35,7 @@ include 'functions.php';
 <div class="container">
   <div class="col-xs-6">
     
-    <form action="login_create.php" method="post">
+    <form action="login_update.php" method="post">
 
       <div class="form-group">
         <label for="username">Username</label>
@@ -36,7 +55,7 @@ include 'functions.php';
         </select>
       </div>
 
-      <input class="btn btn-primary" type="submit" name="submit" value="Update">
+      <input class="btn btn-primary" type="submit" name="submit" value="UPDATE">
 
     </form>
 
