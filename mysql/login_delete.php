@@ -3,9 +3,8 @@
 include 'db.php';
 include 'functions.php';
 
-if(isset($_POST['submit'])) {
-  deleteRows();
-} 
+deleteRows();
+
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +18,7 @@ if(isset($_POST['submit'])) {
 
 <div class="container">
   <div class="col-xs-6">
-    
+    <h1 class="text-center">Delete User</h1>
     <form action="login_delete.php" method="post">
 
       <div class="form-group">
